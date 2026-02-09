@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🤨</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+
+  .box {
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  button {
+    padding: 15px 30px;
+    font-size: 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  #yes {
+    background: limegreen;
+    color: black;
+  }
+
+  #no {
+    background: crimson;
+    color: white;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h1>🤨 Sen jinnimisan?</h1>
+  <button id="yes">HA</button>
+  <button id="no">YO‘Q</button>
+</div>
+
+<script>
+  let yesSize = 20;
+  let noSize = 20;
+
+  const yesBtn = document.getElementById("yes");
+  const noBtn = document.getElementById("no");
+
+  noBtn.onclick = () => {
+    yesSize += 15;
+    noSize -= 3;
+
+    if (noSize < 5) noSize = 5;
+
+    yesBtn.style.fontSize = yesSize + "px";
+    yesBtn.style.padding = yesSize + "px";
+    noBtn.style.fontSize = noSize + "px";
+    noBtn.style.padding = noSize + "px";
+  };
+
+  yesBtn.onclick = () => {
+    document.body.innerHTML = `
+      <div style="
+        background:black;
+        color:lime;
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:40px;
+        text-align:center;
+      ">
+        😆 BILARDIM!<br>SEN JINNISAN!
+      </div>
+    `;
+  };
+</script>
+
+</body>
+</html>
